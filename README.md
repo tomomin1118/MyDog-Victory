@@ -14,3 +14,5 @@
 - 保護犬を引き取ってくれる家族を見つけるサイトを作り連携させる。
 - ペットを飼うには安定した経済力が必要だが、こういった写真を撮ったりしつつ現状飼育をしっかりできている家庭をターゲットにすること可能性が広がると予想。
 
+
+[資料](https://drive.google.com/drive/folders/13YdKHJ20aTaQ_xp4wbVf2Rq_ayhsvAMQ?usp=sharing)
