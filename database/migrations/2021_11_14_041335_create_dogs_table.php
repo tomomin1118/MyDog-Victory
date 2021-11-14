@@ -15,13 +15,13 @@ class CreateDogsTable extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->int('user_id');
+            $table->integer('user_id');
             $table->string('name');
-            $table->date('birthday_year');
-            $table->int('age');
+            $table->date('birthday_year')->nullable();
+            $table->integer('age');
             $table->string('breed');
             $table->string('personality');
-            $table->string('image_path');
+            $table->string('image_path')->nullable();
             $table->string('comment');
             $table->timestamps();
         });
