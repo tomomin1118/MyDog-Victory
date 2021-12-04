@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin経由先
+// マイプロフィールページを表示
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('dogs/create', 'Admin\DogsController@add');
     Route::post('dogs/create', 'Admin\DogsController@create');
+    Route::get('dogs/open', 'Admin\DogsController@open');
     
 });
 

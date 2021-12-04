@@ -4,25 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDogsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-   public function up()
+    public function up()
     {
-        Schema::create('dogs', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->string('birthday_year')->nullable();
-            $table->integer('age');
-            $table->string('breed');
-            $table->string('personality');
+            $table->unsignedBigInteger('dog_id');
             $table->string('image_path')->nullable();
-            $table->string('comment');
+            $table->string('one_comment')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ class CreateDogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dogs');
+        Schema::dropIfExists('images');
     }
 }

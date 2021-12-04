@@ -94,8 +94,8 @@ return [
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'present' => 'The :attribute field must be present.',
-    'regex' => ':attribute に入力が必要です。',
-    'required' => 'The :attribute field is required.',
+    'regex' => 'The :attribute format is invalid.',
+    'required' => ':attributeに入力が必要です。',
     'required_if' => 'The :attribute field is required when :other is :value.',
     'required_unless' => 'The :attribute field is required unless :other is in :values.',
     'required_with' => 'The :attribute field is required when :values is present.',
@@ -150,7 +150,7 @@ return [
         'age' => '年齢',
         'breed' => '犬種',
         'personality' => '性格',
-        'comment' => 'お気に入りポイント'
+        'comment' => 'アピールポイント'
         ],
 
 ];
