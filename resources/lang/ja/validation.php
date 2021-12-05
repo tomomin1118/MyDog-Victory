@@ -150,7 +150,9 @@ return [
         'age' => '年齢',
         'breed' => '犬種',
         'personality' => '性格',
-        'comment' => 'アピールポイント'
+        'birthday' => '生年月日',
+        'mail' => 'メールアドレス',
+        'password' => 'パスワード',
         ],
 
 ];

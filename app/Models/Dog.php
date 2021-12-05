@@ -23,9 +23,9 @@ class Dog extends Model
         'comment' => 'required',
         );
     
-    public function dogs() 
+    public function images() 
     {
-        return $this->hasMany('Models/Dog');
+        return $this->hasMany('App\Models\Images');
     }
 }
 
