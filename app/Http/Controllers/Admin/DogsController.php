@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Dog;
 use App\Models\Images;
-use App\Models\Owner;
+
 
 class DogsController extends Controller
 {
@@ -31,9 +31,6 @@ class DogsController extends Controller
         } else {
             $dogs->image_path = null;
         }
-        //dd($request->file('images'));
-        
-        
         
         unset($form['_token']);
         unset($form['image']);
@@ -45,7 +42,7 @@ class DogsController extends Controller
         unset($form['images']);
         
         $form['user_id'] = Auth::id();
-        //dd($form);
+        
         $dogs->fill($form);
         $dogs->save();
         
@@ -57,45 +54,24 @@ class DogsController extends Controller
                 $image_model->dog_id = $dogs->id;
                 $image_model->one_comment = $form2['one_comment'][$key];
                 $image_model->save();
-                //dd($images);
             }
         }
         
         return redirect('admin/dogs/create');
     }
     
-    //mydogプロフィールページ(公開用)
+    //mydogプロフィール画面(公開用)
     public function open()
     {
       
-        $posts1 = Dog::all();
-        //dd($posts1);
-        //$posts2 = Images::all();
-        //dd($posts2);
+        $posts1 = Dog::where('user_id', Auth::id())->get()->first();
         
         $params = [
-            'posts1' => $posts1, 
-            //'posts2' => $posts2
+            'post' => $posts1
         ];
         
         return view('admin/dogs/open', $params);
     
     }
     
-    //ユーザー登録ページ
-    public function owner(Request $request)
-    {
-        $this->validate($request, Owner::$rules);
-        
-        $owners = new Owner;
-        $form = $request->all();
-        
-        unset($form['_token']);
-        
-        $owners->fill($form);
-        $owners->seve();
-        
-        return view('admin/dogs/owner');
-        
-    }
 }

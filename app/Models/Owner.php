@@ -17,7 +17,6 @@ class Owner extends Model
         'tel' => 'required',
         'mail' => 'required',
         'password' => 'required',
-        'comment' => 'required',
         );
     
     public function dogs() 

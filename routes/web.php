@@ -15,17 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// マイプロフィールページを表示
+//MyDog
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    //登録
     Route::get('dogs/create', 'Admin\DogsController@add');
     Route::post('dogs/create', 'Admin\DogsController@create');
     //公開
     Route::get('dogs/open', 'Admin\DogsController@open');
-    //ユーザー登録
-    Route::get('dogs/owner', 'Admin\DogsController@owner');
-    Route::post('dogs/owner', 'Admin\DogsController@owner');
-    
+    Route::post('dogs/open', 'Admin\DogsController@open');
 });
+
+//ユーザー
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    //ユーザー登録
+    Route::get('dogs/newowner', 'Admin\OwnerController@newowner');
+    Route::post('dogs/newowner', 'Admin\OwnerController@createowner');
+    //ユーザー表示
+    Route::get('dogs/owner', 'Admin\OwnerController@owner');
+    //ユーザー更新
+    Route::post('dogs/editowner', 'Admin\OwnerController@editowner');
+});
+    
 
 
 Auth::routes();

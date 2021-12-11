@@ -147,9 +147,12 @@ return [
 
     'attributes' => [
         'name' => '名前',
+        'birthday_year' => '生まれ年',
         'age' => '年齢',
         'breed' => '犬種',
         'personality' => '性格',
+        'image' => 'メイン画像',
+        'comment' => 'お気に入りポイント',
         'birthday' => '生年月日',
         'mail' => 'メールアドレス',
         'password' => 'パスワード',
